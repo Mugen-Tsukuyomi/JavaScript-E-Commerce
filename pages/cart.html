@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawsome for icons -->
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <title>E-commerce</title>
+</head>
+<body>
+    <!-- <header class="bg-dark-subtle position-fixed w-100 shadow-sm top-0 z-3"> -->
+    <header class="bg-dark-subtle">
+        <div class="container-fluid py-md-4 px-md-5 py-3 px-4 text-primary d-flex justify-content-between align-items-center">
+            <h1 class="fs-5 fst-italic fw-bold"><a class="text-decoration-none" href="../index.html">Online Shopping</a></h1>
+            <h2 class="fst-italic fw-bold text-uppercase fs-5 m-0 me-md-5 px-3" style="color: #0056b3; display: none !important;" data-welcome-user></h2>
+            <div>
+                <ul class="list-unstyled fw-bold d-flex gap-4 m-0 d-none" data-sign-in>
+                    <li><a class="text-decoration-none" href="pages/login.html">Login</a></li>
+                    <li><a class="text-decoration-none" href="pages/register.html">Register</a></li>
+                </ul>
+
+                <ul class="list-unstyled fw-bold d-flex gap-4 m-0 d-none" data-user>
+                    <li style="cursor: pointer; display: none !important;" data-cart-btn>
+                        <i class="fa-solid fa-cart-shopping fs-5"></i><sub data-cart-counter>0</sub> Cart
+                        <i class="fa-solid fa-caret-down text-secondary" data-cart-arrow></i>
+                        <ul class="list-unstyled position-absolute bg-dark-subtle p-3 rounded gap-2 d-flex flex-column shadow d-none" 
+                        style="top: 50px; left: -205%; z-index: 2000; cursor: initial; width: 270px;" data-cart-list>
+                            
+                        </ul>
+                    </li>
+                    <li><a class="text-decoration-none" style="cursor: pointer;" data-logout="login.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- <main class="pt-5 "> -->
+    <main style="min-height: calc(100vh - 160px);">
+        <!-- <div class="py-5 mt-3"> -->
+        <div class="py-4 con">
+            <div class="cart container">
+                <div class="row" data-cart>
+
+                </div>
+                <h3 class="text-center my-4" data-total-price></h3>
+            </div>
+            <hr>
+            <div class="fav container">
+                <h2 class="text-center my-4 position-relative" onmouseover="this.lastChild.style.width ='120px'"
+                    onmouseout="this.lastChild.style.width ='80px'" style="padding-block: 6px;">Favourites 
+                    <span class="position-absolute bg-danger" 
+                    style="height: 3px; width: 80px; bottom: 0px; left: 50%; translate: -50% 0; transition: width 0.4s;"></span></h2>
+
+                <style>
+                    .fav-carousel::-webkit-scrollbar { display: none; } 
+                    .fav-carousel { scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: 0; }
+                    .fav-carousel li { scroll-snap-align: start; }
+                    .fav-carousel.dragging { scroll-behavior: auto; scroll-snap-type: none; user-select: none; cursor: grab; }
+                    [data-carousel-arrow]:hover { color: black !important; }
+                </style>
+                <div class="carousel-cont px-4 px-xl-5 position-relative" data-carousel-container>
+                    <i id="left-arrow" class="fa-solid fa-chevron-left fs-3 position-absolute text-secondary" style="top: 48%; left: 0; translate: 0 -50%; cursor: pointer;" data-carousel-arrow></i>
+                    <!-- <i class="fa-solid fa-angle-left fs-2"></i> -->
+                    <ul class="fav-carousel list-unstyled row flex-nowrap overflow-x-auto" data-fav-products>
+
+                    </ul>
+                    <i id="right-arrow" class="fa-solid fa-chevron-right fs-3 position-absolute text-secondary" style="top: 48%; right: 0; translate: 0 -50%; cursor: pointer;" data-carousel-arrow></i>
+                    <!-- <i class="fa-solid fa-angle-right fs-2"></i> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark-subtle">
+        <div class="container-fluid py-4 px-5 text-center">
+            <p class="m-0 py-1 text-muted">&copy; 12/29/2024 - Mugen Tsukuyomi - Mohamed Aly</p>
+        </div>
+    </footer>
+    
+    <!-- proper.js ------------------------------------------- -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script> -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html>
